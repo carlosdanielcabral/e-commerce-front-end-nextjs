@@ -1,0 +1,36 @@
+.principal-page.darkmode {
+  background-color: rgb(40, 40, 40);
+  color: white;
+}
+
+.principal-page-categories {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 100vw;
+}
+
+.principal-page-categories h2 {
+  display: block;
+  font-weight: 300;
+  margin: 20px auto;
+}
+
+.products-skeleton {
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+  margin: 0;
+  width: 93vw;
+}
+
+.principal-page-category {
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: 600px) {
+  .principal-page-categories {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,70 @@
+.product-image {
+  width: 600px;
+  height: 400px;
+}
+
+.product-detail-page {
+  min-height: 100vh;
+}
+
+.product-detail-page.darkmode {
+  background-color: rgb(40, 40, 40);
+  color: white;
+}
+
+.container-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-data {
+  width: 400px;
+}
+
+.product-data .price {
+  font-size: 26px;
+}
+
+.rate .material-icons {
+  color: white;
+  font-weight: 100;
+  text-shadow: 
+  -1px -1px 0px rgb(182, 161, 41), 
+  -1px 1px 0px rgb(182, 161, 41),                    
+   1px -1px 0px rgb(182, 161, 41),                  
+   1px 0px 0px rgb(182, 161, 41);
+}
+
+.rate .material-icons:hover {
+  color: rgb(182, 161, 41);
+  font-weight: 100;
+  text-shadow: 
+  -1px -1px 0px rgb(182, 161, 41), 
+  -1px 1px 0px rgb(182, 161, 41),                    
+   1px -1px 0px rgb(182, 161, 41),                  
+   1px 0px 0px rgb(182, 161, 41);
+}
+
+.product-data button {
+  border: 1px solid rgb(91, 140, 90);
+  background-color: inherit;
+  padding: 10px;
+  color: rgb(51, 100, 50);
+  transition: 300ms;
+  width: 80%;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 15px;
+}
+
+.product-data button:hover {
+  background-color: rgb(91, 140, 90);
+  color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .product-detail-page .product-image {
+    width: 90%;
+  }
+}

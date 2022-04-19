@@ -1,0 +1,30 @@
+.details-skeleton {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.title-skeleton {
+  width: 600px;
+  min-height: 40px;
+}
+
+.image-skeleton {
+  width: 600px;
+  min-height: 400px;
+}
+
+.details-skeleton .right {
+  margin-top: 100px;
+  width: 400px;
+}
+
+@media screen and (max-width: 900px) {
+  .title-skeleton {
+    width: 330px;
+  }
+
+  .image-skeleton {
+    width: 330px;
+  }
+}

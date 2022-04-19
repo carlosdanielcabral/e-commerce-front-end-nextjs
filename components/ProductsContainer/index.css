@@ -1,0 +1,13 @@
+.products-container {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 900px) {
+  .products-container {
+    box-sizing: border-box;
+    width: 100vw;
+  }
+}

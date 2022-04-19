@@ -1,0 +1,97 @@
+.authentication-page {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.authentication-page .left, .authentication-page .right {
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.authentication-page .left {
+  background: url('../../assets/images/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 60vw;
+}
+
+.authentication-page .right {
+  align-items: flex-start;
+  width: 40vw;
+}
+
+/* .authentication-page header {
+  background-color: #1b3244;
+  box-shadow: 1px 1px 5px 1px rgb(40, 40, 40);
+  color: white;
+  height: 60px;
+  padding: 5px 20px!important;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+} */
+
+/* .left img {
+  width: 100%;
+} */
+
+.authentication-page input {
+  padding: 5px;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 4px;
+}
+
+.authentication-page button {
+  padding: 5px;
+}
+
+.authentication-page h2 {
+  font-size: 20px;
+  font-weight: 300;
+  padding: 10px;
+}
+
+.register, .register form, .login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register, .login {
+  padding: 90px 20px;
+}
+
+.register input, .login input {
+  margin: auto;
+  padding: 10px;
+  margin: 10px;
+  width: 80%;
+}
+
+.register button, .login button {
+  background-color: rgb(20, 62, 90);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  width: 150px;
+}
+
+.error {
+  font-weight: 300;
+  font-size: 12px;
+  color: rgb(158, 3, 3);
+  padding: 0 10px;
+}
+
+@media  screen and (max-width: 600px) {
+  .authentication-page .left, .authentication-page .right {
+    width: 100vw;
+  }
+}

@@ -1,0 +1,93 @@
+.product-card.shopping-cart-page {
+  align-items: center;
+  background-color: white;
+  box-shadow: 2px 2px 5px 2px rgb(210, 210, 210);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  justify-content: space-between;
+  margin: 15px;
+  width: 500px;
+  padding: 0;
+}
+
+.product-card.shopping-cart-page .title {
+  font-size: 20px;
+  font-weight: 200;
+  height: 75px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.product-card.shopping-cart-page .description {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 10px;
+  width: 200px;
+}
+
+.product-card.shopping-cart-page .image {
+  align-items: center;
+  display: flex;
+  width: 100px;
+  height: 200px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.product-card .image img {
+  width: 100%;
+}
+
+.product-card .price {
+  font-weight: 300;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions button {
+  height: 30px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin: 5px;
+}
+
+.actions input {
+  width: 40px;
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.actions .remove-product-button {
+  border: rgb(129, 3, 3);
+  background-color: rgb(129, 3, 3);
+  color: white;
+}
+
+.actions.remove-product-button:hover {
+  background-color: inherit;
+  color: rgb(129, 3, 3);
+}
+
+@media screen and (max-width: 900px) {
+  .product-card.shopping-cart-page {
+    align-items: center;
+    background-color: white;
+    box-shadow: 2px 2px 5px 2px rgb(210, 210, 210);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 200px;
+    justify-content: space-between;
+    margin: 15px;
+    width: 99%;
+    padding: 0;
+  }
+  
+}
+

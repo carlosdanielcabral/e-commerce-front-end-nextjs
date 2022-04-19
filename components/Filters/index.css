@@ -1,0 +1,36 @@
+.filters-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: 200;
+  width: 100%;
+}
+
+.filters-container h2 {
+  color: rgb(100, 100, 100);
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.filters-container .price {
+  background-color: inherit;
+  border: none;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  margin: 0 10px;
+  width: 50px;
+}
+
+.filters-container label {
+  padding: 0 10px;
+}
+
+.filters-container button {
+  background-color: rgb(40, 126, 160);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 7px 15px;
+}
