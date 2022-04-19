@@ -6,8 +6,23 @@ import Header from '../components/Header';
 import ProductSkeleton from '../components/ProductSkeleton';
 import Slider from '../components/Slider';
 import Categories from '../components/Categories';
+import { getProductById, getAllProducts } from '../services/api';
 import Footer from '../components/Footer';
-import './index.module.css';
+import '../styles/Index.module.css';
+
+
+const getAll = async () => {
+  const data = await getAllProducts();
+  const allProductsId = [];
+  for (let productArray of data) {
+    for (let product of productArray) {
+      allProductsId.push(product.id);
+    }
+  }
+  return allProductsId;
+}
+
+getAll();
 
 const Principal = () => {
   const { darkMode, isUserLogged, setLoggedUser, setIsUserLogged } = useContext(AppContext);
@@ -17,13 +32,13 @@ const Principal = () => {
   const [hasProducts, setHasProducts] = useState(false);
   const productsSkeleton = [];
 
-  useEffect(() => {
-    const logged = getLoggedUser();
-    if (logged) {
-      setIsUserLogged(true);
-      setLoggedUser(logged);
-    } else setIsUserLogged(false);
-  }, [isUserLogged, setIsUserLogged, setLoggedUser])
+  // useEffect(() => {
+  //   const logged = getLoggedUser();
+  // //   if (logged) {
+  // //     setIsUserLogged(true);
+  // //     setLoggedUser(logged);
+  // //   } else setIsUserLogged(false);
+  // // }, [isUserLogged, setIsUserLogged, setLoggedUser])
 
   useEffect(() => {
     document.title="Home"

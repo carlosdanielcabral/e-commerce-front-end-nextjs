@@ -37,7 +37,9 @@ export async function getAllProducts() {
   const products = [];
   categories.forEach((category) => products.push(getProductsByCategory(category.id)));
   const data = Promise.all(products)
-    .then((product) => console.log(product))
-    .catch((err) => console.log(err.message));
+    .then((product) => {
+      return product.map((productData) => productData.results)
+    })
+    .catch((err) => err.message);
   return data;
 }

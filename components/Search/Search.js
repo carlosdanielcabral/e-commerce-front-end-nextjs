@@ -1,5 +1,4 @@
 import React, { useContext, useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import AppContext from '../../context/AppContext';
 import { getProductsByQuery, getProductsFromCategoryAndQuery } from '../../services/api';

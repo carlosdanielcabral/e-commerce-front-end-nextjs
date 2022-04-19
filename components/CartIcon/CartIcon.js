@@ -1,5 +1,4 @@
 import React from 'react';
-import { Redirect } from 'react-router';
 import './CartIcon.module.css';
 
 class CartIcon extends React.Component {

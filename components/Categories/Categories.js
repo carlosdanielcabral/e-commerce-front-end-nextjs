@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import AppContext from '../../context/AppContext';
-import { useRouter } from '/next/router';
 import { getCategories, getProductsByCategory,
   getProductsFromCategoryAndQuery } from '../../services/api';
 import './Categories.module.css';
@@ -17,7 +17,7 @@ const Categories = () => {
 
   const [categories, setCategories] = useState([]);
 
-  const { query: { id: pathname }, push } = useRouter();
+  const { pathname, push } = useRouter();
 
   useEffect(() => {
     const getCategory = async () => {
