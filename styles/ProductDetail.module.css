@@ -19,12 +19,12 @@
 
 .containerFlex {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
 }
 
 .productData {
-  width: 400px;
+  width: 300px;
 }
 
 .productData .price {
@@ -68,7 +68,11 @@
   color: white;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
+  .containerFlex {
+    flex-wrap: wrap;
+  }
+
   .productDetailPage .productImage {
     width: 90%;
   }

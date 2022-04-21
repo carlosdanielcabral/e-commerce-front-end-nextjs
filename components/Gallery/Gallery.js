@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Gallery.module.css';
+import Image from 'next/image';
+import styles from './Gallery.module.css';
 
 class Gallery extends React.Component {
   constructor() {
@@ -93,36 +94,36 @@ class Gallery extends React.Component {
     const { pictures } = this.props;
 
     return (
-      <div className="gallery-container">
+      <div className={ styles.galleryContainer }>
         <div className="image">
-          <img src={ thisImage.url } alt="Product" />
+          <img src={thisImage.url} alt="Product"/>
         </div>
 
         {
           pictures.length > 1 && (
             <>
-              <div className="buttons">
+              <div className={ styles.buttons }>
                 <button
                   className="previous-image"
                   onClick={ this.previousImage }
                   type="button"
                 >
                   <span className="material-icons">
-                    chevron_left
+                    &lt;
                   </span>
                 </button>
 
                 <button className="next-image" onClick={ this.nextImage } type="button">
                   <span className="material-icons">
-                    chevron_right
+                    &gt;
                   </span>
                 </button>
               </div>
 
-              <div className="checkbox-container">
+              <div className={ styles.checkboxContainer }>
                 {
                   pictures.map((picture) => (
-                    <label htmlFor={ picture.id } key={ picture.id } className="label">
+                    <label htmlFor={ picture.id } key={ picture.id } className={ styles.label }>
                       <input
                         id={ picture.id }
                         type="radio"

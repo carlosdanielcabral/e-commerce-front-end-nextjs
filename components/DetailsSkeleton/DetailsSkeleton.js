@@ -3,10 +3,10 @@ import Skeleton from '@mui/material/Skeleton';
 import styles from './DetailsSkeleton.module.css';
 
 const DetailsSkeleton = () => (
-  <div className="details-skeleton">
+  <div className={ styles.detailsSkeleton }>
     <div className="left">
-      <Skeleton variant="rectangular" className="title-skeleton"/>
-      <Skeleton sx={{ my: 2 }} variant="rectangular" className="image-skeleton"/>
+      <Skeleton variant="rectangular" className={ styles.titleSkeleton }/>
+      <Skeleton sx={{ my: 2 }} variant="rectangular" className={ styles.imageSkeleton }/>
     </div>
 
     <div className="right">

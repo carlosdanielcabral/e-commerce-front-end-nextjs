@@ -81,7 +81,7 @@ const ProductDetail = ({ id }) => {
                   { product.title }
                 </h2>
 
-                <div className="container-flex">
+                <div className="containerFlex">
                   <div className={ styles.productImage }>
                     { product.pictures && <Gallery pictures={ product.pictures } /> }
                   </div>

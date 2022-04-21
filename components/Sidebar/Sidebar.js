@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import Link from 'next/link';
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import CartIcon from "../CartIcon";
+import { BsFillCartFill } from "react-icons/bs";
 import ProfileOptions from "../ProfileOptions/ProfileOptions";
 import styles from "./Sidebar.module.css";
 
@@ -23,7 +24,7 @@ const Sidebar = () => {
           type="button"
           onClick={ () => setIsSideBarVisible(false) }
         >
-          <AiOutlineClose className={ styles.closeSidebar } />
+          <AiOutlineClose />
         </button>
         <div className="options">
           <ul>
@@ -38,7 +39,11 @@ const Sidebar = () => {
             </li> */}
 
             <li>
-              <CartIcon /> Meu carrinho
+              <Link href="/shopping-cart" passHref>
+                <a>
+                  <BsFillCartFill className={styles.cartIcon} />  Meu carrinho
+                </a>
+              </Link>
             </li>
           </ul>
         </div>

@@ -9,6 +9,7 @@
 
 .categoriesHome {
   background-color: rgb(245, 245, 245);
+  box-sizing: border-box;
   flex-wrap: nowrap;
   overflow-x: auto;
   padding: 20px;

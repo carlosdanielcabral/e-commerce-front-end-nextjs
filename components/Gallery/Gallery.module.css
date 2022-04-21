@@ -1,15 +1,15 @@
-.gallery-container {
+.galleryContainer {
   width: 600px;
   height: 400px;
   overflow: hidden;
   position: absolute;
 }
 
-.gallery-container img {
+.galleryContainer img {
   width: 100%;
 }
 
-.gallery-container .buttons {
+.galleryContainer .buttons {
   display: flex;
   height: 100%;
   justify-content: space-between;
@@ -20,11 +20,11 @@
   transition: 300ms;
 }
 
-.gallery-container:hover .buttons {
+.galleryContainer:hover .buttons {
   opacity: 1;
 }
 
-.gallery-container button {
+.galleryContainer button {
   background-color: inherit;
   border: none;
   font-size: 20px;
@@ -32,15 +32,15 @@
   opacity: 0.5;
 }
 
-.gallery-container button:hover {
+.galleryContainer button:hover {
   opacity: 0.3;
 }
 
-.gallery-container button .material-icons {
+.galleryContainer button .material-icons {
   font-size: 40px;
 }
 
-.checkbox-container {
+.checkboxContainer {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -50,7 +50,7 @@
   transition: 400ms;
 }
 
-.gallery-container:hover .checkbox-container {
+.galleryContainer:hover .checkboxContainer {
   opacity: 1;
 }
 
@@ -69,7 +69,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .gallery-container {
+  .galleryContainer {
     width: 90%;
   }
 }

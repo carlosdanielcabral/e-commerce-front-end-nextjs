@@ -23,7 +23,7 @@
   left: 0;
 }
 
-.closeSidebar {
+button.closeSidebar {
   position: absolute;
   right: 0;
   color: white;
@@ -64,7 +64,12 @@
     display: block;
   }
 
-  .sidebar .cart-icon .material-icons {
+  .sidebar .carticon .materialIcons {
     color: white;
+  }
+
+  .cartIcon {
+    color: white;
+    font-size: 20px;
   }
 }
