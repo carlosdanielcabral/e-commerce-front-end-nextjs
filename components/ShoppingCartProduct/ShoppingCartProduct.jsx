@@ -1,5 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
+import addProduct from '../../helpers/addProduct';
+import removeProductFromStorage from '../../helpers/removeProduct';
 import { BsFillTrashFill } from 'react-icons/bs';
 import AppContext from '../../context/AppContext';
 import getQuantity from '../../helpers/getQuantity';
@@ -9,6 +12,7 @@ const ShoppingCartProduct = (props) => {
   const { id, title, image, price, removeProduct } = props;
   const { total, setTotal } = useContext(AppContext);
   const [quantity, setQuantity] = useState(1);
+  const [isLessButtonDisable, setIsLessButtonDisable] = useState(false);
 
   useEffect(() => {
     getQuantity(id)
@@ -16,23 +20,22 @@ const ShoppingCartProduct = (props) => {
       .catch((error) => console.log(`Ocorreu um erro.\nErro: ${error.message}`));
   }, [id, setQuantity]);
 
-  const handleQuantity = (operation) => {
-    if (operation === 'decrease') {
-      setQuantity(quantity - 1);
-      setTotal(total - price);
-    }
-    else {
+  const handleQuantity = (type) => {
+    if (type === 'increase') {
       setQuantity(quantity + 1);
       setTotal(total + price);
+      addProduct(id);
+    } else {
+      setQuantity(quantity - 1);
+      setTotal(total - price);
+      removeProductFromStorage(id);
     }
-
-    if (quantity === 0) removeProduct(id);
   }
 
   return (
     <div className={ styles.productCard }>
       <div className={ styles.productImage }>
-        <img src={ image } alt={ title } />
+        <Image src={ image } alt={ title } layout="fill"/>
       </div>
 
       <section className={ styles.productDescription }>
@@ -46,12 +49,13 @@ const ShoppingCartProduct = (props) => {
       <section className={ styles.actions }>
         <button
           onClick={ () => handleQuantity('decrease') }
+          disabled={ isLessButtonDisable }
           type="button"
         >
           -
         </button>
 
-        <input type="text" value={ quantity } />
+        <span>{ quantity }</span>
 
         <button
           onClick={ () => handleQuantity('increase') }

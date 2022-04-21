@@ -42,8 +42,10 @@ const Header = () => {
         <Search />
 
         <section className={ styles.links }>
-          <Link href="/">
-            <AiFillHome className={ styles.homeIcon } />
+          <Link href="/" passHref>
+            <a>
+              <AiFillHome className={ styles.homeIcon } />
+            </a>
           </Link>
 
           {/* <Link to="/search-products">

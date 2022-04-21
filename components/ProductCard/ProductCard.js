@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import AppContext from '../../context/AppContext';
 import Link from 'next/link';
+import Image from 'next/image';
+import AppContext from '../../context/AppContext';
 import styles from './ProductCard.module.css';
 
 const ProductCard = ({ id, title, image, price }) => {
@@ -12,7 +13,7 @@ const ProductCard = ({ id, title, image, price }) => {
       <Link href={ `/products/${encodeURIComponent(id)}` } passHref>
         <a>
           <div className={ styles.image }>
-            <img src={ image } alt={ title } />
+            <Image src={ image } alt={ title } layout="fill"/>
           </div>
 
           <section className={ styles.description }>

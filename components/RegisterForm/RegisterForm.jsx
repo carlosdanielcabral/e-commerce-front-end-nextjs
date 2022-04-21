@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { Redirect } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { getUser, saveUser, saveLoggedUser } from '../../services/userFunctions';
-// l
+import styles from './RegisterForm.module.css';
 
 const RegisterForm = () => {
   const { setIsUserLogged } = useContext(AppContext);
@@ -12,8 +12,9 @@ const RegisterForm = () => {
   const [invalidPassword, setInvalidPassword] = useState(false);
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [redirect, setRedirect] = useState(false);
   const [userAlreadyRegister, setUserAlreadyRegister] = useState(false);
+
+  const router = useRouter();
 
   const validateInputs = () => {
     const validEmailRgx =  /\w+@\w+.com/i;
@@ -32,17 +33,16 @@ const RegisterForm = () => {
     const user = getUser(email, password);
     if (valid && !user) {
       saveUser(name, email, password);
-      setRedirect(true);
       setIsUserLogged(true);
       saveLoggedUser(email, password);
+      router.push('/');
     } else {
       if (user) setUserAlreadyRegister(true);
     }
   }
 
-  if (redirect) return <Redirect to="/" />;
   return (
-    <section className="register">
+    <section className={ styles.register }>
     <h2>Cadastro</h2>
 
     <form>
@@ -53,7 +53,11 @@ const RegisterForm = () => {
         value={ name }
       />
 
-      { invalidName && <span className='error'>Nome inválido! Digite pelo menos 3 caracteres</span> }
+      { invalidName && (
+        <span className={ styles.error }>
+          Nome inválido! Digite pelo menos 3 caracteres
+        </span> 
+      )}
 
       <input
         onChange={ (e) => setEmail(e.target.value) }
@@ -62,7 +66,7 @@ const RegisterForm = () => {
         value={ email }
       />
 
-      { invalidEmail && <span className='error'>Email inválido!</span> }
+      { invalidEmail && <span className={ styles.error }>Email inválido!</span> }
 
       <input
         onChange={ (e) => setPassword(e.target.value) }
@@ -71,7 +75,11 @@ const RegisterForm = () => {
         value={ password }
       />
 
-      { invalidPassword && <span className='error'>Senha inválida! Digite pelo menos 6 caracteres.</span> }
+      { invalidPassword && (
+        <span className={ styles.error }>
+          Senha inválida! Digite pelo menos 6 caracteres.
+        </span>
+      )}
 
       <button
         onClick={ handleSubmit }
@@ -80,7 +88,7 @@ const RegisterForm = () => {
         Cadastrar
       </button>
 
-      { userAlreadyRegister && <span className='error'>Email já cadastrado!</span> }
+      { userAlreadyRegister && <span className={ styles.error }>Email já cadastrado!</span> }
     </form>
   </section>
   )

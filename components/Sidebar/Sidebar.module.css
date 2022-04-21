@@ -3,7 +3,7 @@
   box-shadow: 1px 1px 5px 1px rgb(60, 60, 60);
   height: 100%;
   left: -100vw;
-  position: absolute;
+  position: fixed;
   top: 0;
   transition: 300ms;
   width: 80vw;

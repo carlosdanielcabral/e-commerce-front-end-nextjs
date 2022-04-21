@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AppContext from '../context/AppContext';
 import getProducts from '../helpers/getProducts';
+import getTotal from '../helpers/getTotal';
 import removeProductsFromStorage from '../helpers/removeProducts';
 import ShoppingCartProduct from '../components/ShoppingCartProduct';
 import Header from '../components/Header';
@@ -16,11 +17,13 @@ const ShoppingCart = () => {
     const getCartProducts = async () => {
       const response = await getProducts();
       if (response) setProducts(response);
+      const totalPrice = await getTotal();
+      setTotal(totalPrice);
     }
 
     getCartProducts();
 
-  }, [setProducts]);
+  }, [setProducts, setTotal]);
 
   const removeProduct = (id) => {
     const newProducts = products.filter((product) => product.id !== id);
@@ -40,7 +43,7 @@ const ShoppingCart = () => {
               <h3>
                 { 'Total: ' }
                 {
-                  total.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
+                  total.toFixed(2).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })
                 }
               </h3>
 

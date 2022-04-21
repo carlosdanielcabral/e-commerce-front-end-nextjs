@@ -16,37 +16,39 @@ const Slider = ({ products, id }) => {
   }
 
   return (
-    <div className={ styles.sliderPrincipalPage } id={ id }>
-      <div className={ styles.buttons }>
-        <button
-          type="button"
-          onClick={ scrollRight }
-          className={ styles.scrollRightButton }
-        >
-            <AiOutlineCaretRight />
-        </button>
+    <div className={ styles.container }>
+      <div className={ styles.sliderPrincipalPage } id={ id }>
+        <div className={ styles.buttons }>
+          <button
+            type="button"
+            onClick={ scrollRight }
+            className={ styles.scrollRightButton }
+          >
+              <AiOutlineCaretRight />
+          </button>
 
-        <button
-          type="button"
-          onClick={ scrollLeft }
-          className={ styles.scrollLeftButton }
-        >
-            <AiOutlineCaretLeft />
-        </button>
+          <button
+            type="button"
+            onClick={ scrollLeft }
+            className={ styles.scrollLeftButton }
+          >
+              <AiOutlineCaretLeft />
+          </button>
+        </div>
+        {
+          products.map((product) => {
+            return (
+              <ProductCard
+                key={ `home-product-${product.id}` }
+                id={ product.id }
+                title={ product.title }
+                image={ product.thumbnail}
+                price={ product.price }
+              />
+            );
+          })
+        }
       </div>
-      {
-        products.map((product) => {
-          return (
-            <ProductCard
-              key={ `home-product-${product.id}` }
-              id={ product.id }
-              title={ product.title }
-              image={ product.thumbnail}
-              price={ product.price }
-            />
-          );
-        })
-      }
     </div>
   )
 } 

@@ -1,28 +1,29 @@
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
-import { Redirect } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { getUser, saveLoggedUser } from '../../services/userFunctions';
+import styles from './LoginForm.module.css';
 
 const LoginForm = () => {
   const { setIsUserLogged } = useContext(AppContext);
   const [email, setEmail] = useState('');
   const [invalidAuth, setInvalidAuth] = useState(false);
   const [password, setPassword] = useState('');
-  const [redirect, setRedirect] = useState(false);
+
+  const router = useRouter();
 
   const authenticateUser = (e) => {
     e.preventDefault();
     const hasUser = getUser(email, password);
     if (hasUser) {
-      setRedirect(true);
       setIsUserLogged(true);
       saveLoggedUser(email, password)
+      router.push('/authentication/login');
     } else setInvalidAuth(true);
   }
 
-  if (redirect) return <Redirect to="/" />;
   return (
-    <section className="login">
+    <section className={ styles.login }>
       <h2>Login</h2>
 
       <form>
@@ -46,11 +47,11 @@ const LoginForm = () => {
           onClick={ authenticateUser }
           type="submit"
         >
-          Cadastrar
+          Entrar
         </button>
 
         {
-          invalidAuth && <span>Email ou senha inválidos</span>
+          invalidAuth && <span className={ styles.error }>Email ou senha inválidos</span>
         }
       </form>
     </section>

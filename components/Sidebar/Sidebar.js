@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-// import {
-//   BsFillMoonFill,
-//   BsFillSunFill,
-// } from "react-icons/bs";
-// import AppContext from "../../context/AppContext";
 import CartIcon from "../CartIcon";
 import ProfileOptions from "../ProfileOptions/ProfileOptions";
 import styles from "./Sidebar.module.css";
@@ -13,7 +7,6 @@ import styles from "./Sidebar.module.css";
 const menuStyle = { color: "white", fontSize: "26px" };
 
 const Sidebar = () => {
-  // const { darkMode, setDarkMode } = useContext(AppContext);
   const [isSidebarVisible, setIsSideBarVisible] = useState(false);
 
   return (
@@ -24,7 +17,7 @@ const Sidebar = () => {
         <AiOutlineMenu style={menuStyle} />
       </button>
 
-      <div className={ `${styles.sidebar} ${isSidebarVisible ? 'visible' : ''} ` }>
+      <div className={ `${styles.sidebar} ${isSidebarVisible ? styles.visible : ''} ` }>
         <button
           className={ styles.closeSidebar }
           type="button"
