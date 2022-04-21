@@ -11,10 +11,10 @@ const Home = () => {
   // document.title = 'E-commerce | Home';
 
   return (
-    <div className={ `home-page ${darkMode && 'darkmode'}` }>
+    <div className={ styles.searchPage }>
       <Header />
-      <div className="container">
-        <div className="right">
+      <div className={ styles.container }>
+        <div className={ styles.right }>
           {
             hasSearch && (
               <Pagination />
@@ -22,7 +22,7 @@ const Home = () => {
           }
         </div>
 
-        <div className="left">
+        <div className={ styles.left }>
           <Categories />
         </div>
       </div>

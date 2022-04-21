@@ -7,6 +7,11 @@
   min-height: 100vh;
 }
 
+.productDetailPage h3 {
+  font-size: 34px;
+  font-weight: 300;
+}
+
 .productDetailPage.darkmode {
   background-color: rgb(40, 40, 40);
   color: white;

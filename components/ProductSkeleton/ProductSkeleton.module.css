@@ -2,3 +2,7 @@
   display: inline-block;
   margin: 5px;
 }
+
+.skeleton {
+  border-radius: 10px;
+}

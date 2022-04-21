@@ -30,7 +30,7 @@ const Pagination = () => {
   return (
     <>
       <ProductsContainer products={ currentProducts } />
-      <section className="pages">
+      <section className={ styles.pages }>
         {
           buttons.map((button) => (
             <button

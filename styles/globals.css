@@ -26,3 +26,8 @@ a {
   display: flex;
   justify-content: space-around;
 }
+
+.page-selected {
+  background-color: #318d90;
+}
+

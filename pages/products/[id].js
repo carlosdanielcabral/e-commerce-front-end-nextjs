@@ -88,6 +88,9 @@ const ProductDetail = ({ id }) => {
 
                   <div className={ styles.productData }>
                     <h3>Informações</h3>
+                    <h4>Frete grátis: { product.shipping.freeShipping ? 'sim' : 'não' }</h4>
+                    <h4>Garantia: { product.warranty }</h4>
+                    <h4>Preço:</h4>
                     <p className={ styles.price }>
                       { product.price && (
                         product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })) }

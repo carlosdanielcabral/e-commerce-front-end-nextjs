@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-start;
   border-right: 1px solid rgb(200, 200, 200);
+  padding: 10px;
   padding-right: 20px;
   flex-wrap: wrap;
 }
@@ -70,7 +71,7 @@
   /* border-left: 8px solid rgb(219, 190, 129); */
 }
 
-.category.selected {
+.categories .selected {
   background-color: rgb(200, 200, 200);
   /* border-left: 8px solid rgb(219, 190, 129); */
 }
