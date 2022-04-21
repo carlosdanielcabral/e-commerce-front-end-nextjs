@@ -1,16 +1,27 @@
 /* eslint-disable react/jsx-max-depth */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import getProducts from '../helpers/getProducts';
+import getTotal from '../helpers/getTotal';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
+import ProductCard from '../components/ProductCard';
 import '../styles/Checkout.module.css';
 
-class CheckoutPage extends React.Component {
-  componentDidMount() {
-    document.title = 'Finalizar compra';
-  }
+const CheckoutPage = () => {
+  const [total, setTotal] = useState(0);
+  const [products, setProducts] = useState([]);
 
-  render() {
-    const { location: { state: { total, products } } } = this.props;
+  useEffect(() => {
+    const getProductsFromStorage = async () => {
+      const response = await getProducts();
+      setProducts(response);
+      const totalPrice = await getTotal();
+      setTotal(totalPrice);
+    }
+    getProductsFromStorage();
+  }, [setProducts, setTotal])
+
+  if (products.length === 0) return '';
     return (
       <div className="checkout-page">
         <Header />
@@ -23,17 +34,12 @@ class CheckoutPage extends React.Component {
           <div className="purchase-summary">
             {
               products.map((product) => (
-                <div key={ product.id } className="product-card">
-                  <img src={ product.thumbnail } alt="Product" />
-                  <p className="product-title">{ product.title }</p>
-                  <p>
-                    {
-                      product.price.toLocaleString('pr-br', {
-                        style: 'currency', currency: 'BRL',
-                      })
-                    }
-                  </p>
-                </div>
+                <ProductCard
+                  key={ product.id }
+                  image={ product.thumbnail }
+                  title={ product.title }
+                  price={ product.price }
+                />
               ))
             }
           </div>
@@ -72,14 +78,7 @@ class CheckoutPage extends React.Component {
         </div>
       </div>
     );
-  }
 }
 
-CheckoutPage.propTypes = {
-  location: PropTypes.objectOf(PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object,
-  ])).isRequired,
-};
 
 export default CheckoutPage;
