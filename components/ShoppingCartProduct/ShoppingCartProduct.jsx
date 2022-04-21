@@ -39,7 +39,7 @@ const ShoppingCartProduct = (props) => {
         <h2 className="title">{ title }</h2>
 
         <h3 className="price">
-          { price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }
+          {/* { price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) } */}
         </h3>
       </section>
 

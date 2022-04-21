@@ -57,16 +57,13 @@ const ProductDetail = ({ id }) => {
   }, [setProduct, id]);
 
 
-  const addToCart = ({ target }) => {
-    const { id } = target;
-
-    const products = [localStorage.getItem('shoppingCart')];
-
-    if (products[0]) {
+  const addToCart = () => {
+    const products = [localStorage.getItem('shopping-cart')];
+    if (products) {
       const product = [...products, id];
-      localStorage.setItem('shoppingCart', product);
+      localStorage.setItem('shopping-cart', product);
     } else {
-      localStorage.setItem('shoppingCart', id);
+      localStorage.setItem('shopping-cart', id);
     }
     setTotal(total + product.price);
   }

@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import AppContext from '../context/AppContext';
 import getProducts from '../helpers/getProducts';
+import removeProductsFromStorage from '../helpers/removeProducts';
 import ShoppingCartProduct from '../components/ShoppingCartProduct';
 import Header from '../components/Header';
 import styles from '../styles/ShoppingCart.module.css';
@@ -24,6 +25,7 @@ const ShoppingCart = () => {
   const removeProduct = (id) => {
     const newProducts = products.filter((product) => product.id !== id);
     setProducts(newProducts);
+    removeProductsFromStorage(id);
   }
       
   return (
