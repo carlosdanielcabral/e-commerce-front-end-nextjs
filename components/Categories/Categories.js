@@ -42,7 +42,7 @@ const Categories = () => {
   }
 
   return (
-    <aside className={ styles.categories }>
+    <aside className={ `${styles.categories} ${!pathname.includes('search') && styles.categoriesHome}`}>
       {
         categories.map(({ name, id }) => (
           pathname.includes('search')
@@ -67,7 +67,7 @@ const Categories = () => {
                 id={ id }
                 onClick={ (e) => {
                   selectCategory(e) 
-                  push('/search-products')
+                  push('/search')
                 } }
               >
                 {name}
