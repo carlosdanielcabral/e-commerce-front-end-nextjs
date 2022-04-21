@@ -30,20 +30,20 @@ const ShoppingCartProduct = (props) => {
   }
 
   return (
-    <div className="product-card shopping-cart-page">
-      <div className="image">
+    <div className={ styles.productCard }>
+      <div className={ styles.productImage }>
         <img src={ image } alt={ title } />
       </div>
 
-      <section className="description">
-        <h2 className="title">{ title }</h2>
+      <section className={ styles.productDescription }>
+        <h2 className={ styles.productTitle }>{ title }</h2>
 
-        <h3 className="price">
+        <h3 className={ styles.productPrice }>
           {/* { price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) } */}
         </h3>
       </section>
 
-      <section className="actions">
+      <section className={ styles.actions }>
         <button
           onClick={ () => handleQuantity('decrease') }
           type="button"

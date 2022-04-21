@@ -10,7 +10,7 @@ const getProducts = async () => {
     const productsPromises = [];
     
     productsId.forEach((id) => {
-      const productData = getProductById(id); // productData agora é uma Promise.
+      const productData = getProductById(id);
       productsPromises.push(productData);
     });
 

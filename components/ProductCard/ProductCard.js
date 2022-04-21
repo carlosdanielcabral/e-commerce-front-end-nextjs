@@ -8,9 +8,9 @@ const ProductCard = ({ id, title, image, price }) => {
   const { darkMode } = useContext(AppContext);
 
   return (
-    <div className={ `${styles.productCard } ${darkMode && 'darkmode'}` }>
-      <Link href={ `/products/${id}` }>
-        <div>
+    <div className={ styles.productCard }>
+      <Link href={ `/products/${encodeURIComponent(id)}` } passHref>
+        <a>
           <div className={ styles.image }>
             <img src={ image } alt={ title } />
           </div>
@@ -25,7 +25,7 @@ const ProductCard = ({ id, title, image, price }) => {
             </h3>
           </section>
 
-        </div>
+        </a>
       </Link>
       {/* <button
         type="button"

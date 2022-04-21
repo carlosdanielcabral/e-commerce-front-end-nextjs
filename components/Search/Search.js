@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import { useRouter } from 'next/router';
 import AppContext from '../../context/AppContext';
 import { getProductsByQuery, getProductsFromCategoryAndQuery } from '../../services/api';
 import styles from './Search.module.css';
@@ -15,7 +16,7 @@ const Search = () => {
     setQuery,
   } = useContext(AppContext);
 
-  const [redirect, setRedirect] = useState(false);
+  const router = useRouter();
 
   const searchProducts = async (e) => {
     e.preventDefault();
@@ -27,7 +28,7 @@ const Search = () => {
     }
     setProducts(data.results);
     setHasSearch(true);
-    setRedirect(true);
+    router.push('/search')
   }
 
   return (
@@ -57,7 +58,6 @@ const Search = () => {
           Limpar
         </button> */}
       </form>
-      { redirect && <Redirect to="/search-products" /> }
       {/* <h2 data-testid="home-initial-message">
         Digite algum termo de pesquisa ou escolha uma categoria.
       </h2> */}

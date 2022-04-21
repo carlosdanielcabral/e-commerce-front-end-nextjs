@@ -59,7 +59,7 @@ const ProductDetail = ({ id }) => {
 
   const addToCart = () => {
     const products = [localStorage.getItem('shopping-cart')];
-    if (products) {
+    if (products[0]) {
       const product = [...products, id];
       localStorage.setItem('shopping-cart', product);
     } else {

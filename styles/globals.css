@@ -15,6 +15,13 @@ a {
   box-sizing: border-box;
 }
 
+.container {
+  padding: 30px!important;
+  margin: 0px!important;
+  width: 100%!important;
+  box-sizing: border-box;
+}
+
 .container-flex {
   display: flex;
   justify-content: space-around;
