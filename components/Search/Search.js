@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import AppContext from '../../context/AppContext';
 import { getProductsByQuery, getProductsFromCategoryAndQuery } from '../../services/api';
-import './Search.module.css';
+import styles from './Search.module.css';
 
 const style = { color: 'rgb(150, 150, 150)', fontSize: '20px' };
 
@@ -31,9 +31,9 @@ const Search = () => {
   }
 
   return (
-    <div className="search">
+    <div className={ styles.search }>
       <form>
-        <div className="input-button-container">
+        <div className={ styles.inputButtonContainer }>
           <input
             type="text"
             value={ query }
@@ -46,7 +46,7 @@ const Search = () => {
             type="submit"
             onClick={ searchProducts }
           >
-            <BsSearch style={ style } className="search-icon" />
+            <BsSearch style={ style } className={ styles.searchIcon } />
           </button>
         </div>
         {/* <button

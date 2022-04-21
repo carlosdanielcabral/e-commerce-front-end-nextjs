@@ -8,19 +8,19 @@ import Search from '../Search';
 import CartIcon from '../CartIcon';
 import ProfileOptions from '../ProfileOptions/ProfileOptions';
 import Sidebar from '../Sidebar/Sidebar';
-import './Header.module.css';
+import styles from './Header.module.css';
 
 const Header = () => {
   // const { darkMode, setDarkMode } = useContext(AppContext)
 
   return (
-    <header className="header">
-      <section className="header-container">
+    <header className={ styles.header }>
+      <section className={ styles.headerContainer }>
         <Sidebar />
-        <section className="logo">
-          <h1 className="header-title">E-commerce</h1>
+        <section className={ styles.logo }>
+          <h1 className={ styles.headerTitle }>E-commerce</h1>
         </section>
-        <section className="general-options">
+        <section className={ styles.generalOptions }>
           {/* <section className="darkmode">
             <button
               type="button"
@@ -38,12 +38,12 @@ const Header = () => {
       </section>
 
 
-      <nav className="navigation-links">
+      <nav className={ styles.navigationLinks }>
         <Search />
 
-        <section className="links">
+        <section className={ styles.links }>
           <Link href="/">
-            <AiFillHome className="home-icon" />
+            <AiFillHome className={ styles.homeIcon } />
           </Link>
 
           {/* <Link to="/search-products">

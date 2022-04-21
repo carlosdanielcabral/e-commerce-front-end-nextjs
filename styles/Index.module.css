@@ -1,9 +1,9 @@
-.principal-page.darkmode {
+.principalPage.darkmode {
   background-color: rgb(40, 40, 40);
   color: white;
 }
 
-.principal-page-categories {
+.principalPageCategories {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -11,13 +11,13 @@
   width: 100vw;
 }
 
-.principal-page-categories h2 {
+.principalPageCategories h2 {
   display: block;
   font-weight: 300;
   margin: 20px auto;
 }
 
-.products-skeleton {
+.productsSkeleton {
   box-sizing: border-box;
   display: flex;
   overflow: hidden;
@@ -25,12 +25,12 @@
   width: 93vw;
 }
 
-.principal-page-category {
+.principalPageCategory {
   margin-bottom: 80px;
 }
 
 @media screen and (max-width: 600px) {
-  .principal-page-categories {
+  .principalPageCategories {
     padding: 10px;
   }
 }

@@ -6,7 +6,7 @@
   flex-wrap: wrap;
 }
 
-.input-button-container {
+.inputButtonContainer {
   align-items: center;
   background: white;
   border: rgb(210, 210, 210);
@@ -80,7 +80,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .input-button-container {
+  .inputButtonContainer {
     width: 200px;
   }
 }

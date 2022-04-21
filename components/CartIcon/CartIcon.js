@@ -1,36 +1,20 @@
-import React from 'react';
-import './CartIcon.module.css';
+import React from "react";
+import { useRouter } from "next/router";
+import { BsFillCartFill } from "react-icons/bs";
+import styles from "./CartIcon.module.css";
 
-class CartIcon extends React.Component {
-  constructor() {
-    super();
+const CartIcon = () => {
+  const router = useRouter();
 
-    this.state = {
-      redirect: false,
-    };
-  }
-
-  redirect = () => {
-    this.setState({ redirect: true });
-  }
-
-  render() {
-    const { redirect } = this.state;
-    return (
-      <>
-        <button
-          className="cart-icon"
-          type="button"
-          onClick={ this.redirect }
-        >
-          <h2 className="material-icons">shopping_cart</h2>
-        </button>
-        {
-          redirect && <Redirect to="/shopping-cart" />
-        }
-      </>
-    );
-  }
+  return (
+    <button
+      className={styles.cartIcon}
+      type="button"
+      onClick={ () => router.push('/shopping-cart') }
+    >
+      <BsFillCartFill />
+    </button>
+  );
 }
 
 export default CartIcon;

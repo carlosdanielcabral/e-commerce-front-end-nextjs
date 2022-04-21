@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './index.css';
+import './Gallery.module.css';
 
 class Gallery extends React.Component {
   constructor() {
@@ -122,7 +122,7 @@ class Gallery extends React.Component {
               <div className="checkbox-container">
                 {
                   pictures.map((picture) => (
-                    <label htmlFor={ picture.id } key={ picture.id }>
+                    <label htmlFor={ picture.id } key={ picture.id } className="label">
                       <input
                         id={ picture.id }
                         type="radio"

@@ -3,12 +3,12 @@ import AppContext from '../context/AppContext';
 import Categories from '../components/Categories';
 import Header from '../components/Header/Header';
 import Pagination from '../components/Pagination';
-import '../styles/Search.module.css';
+import styles from '../styles/Search.module.css';
 
 const Home = () => {
   const { hasSearch, darkMode } = useContext(AppContext);
 
-  document.title = 'E-commerce | Home';
+  // document.title = 'E-commerce | Home';
 
   return (
     <div className={ `home-page ${darkMode && 'darkmode'}` }>

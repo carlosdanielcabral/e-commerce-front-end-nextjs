@@ -9,6 +9,7 @@ const Provider = ({ children }) => {
   const [query, setQuery] = useState('');
   const [isUserLogged, setIsUserLogged] = useState();
   const [loggedUser, setLoggedUser] = useState({});
+  const [total, setTotal] = useState(0);
 
   const context = {
     category,
@@ -25,6 +26,8 @@ const Provider = ({ children }) => {
     setProducts,
     query,
     setQuery,
+    total,
+    setTotal,
   };
 
   return (

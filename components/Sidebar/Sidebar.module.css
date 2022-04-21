@@ -1,0 +1,70 @@
+.sidebar {
+  background-color: rgb(30, 30, 30);
+  box-shadow: 1px 1px 5px 1px rgb(60, 60, 60);
+  height: 100%;
+  left: -100vw;
+  position: absolute;
+  top: 0;
+  transition: 300ms;
+  width: 80vw;
+  z-index: 1;
+}
+
+.sidebarContainer {
+  display: none;
+}
+
+.sidebarContainer button {
+  background-color: inherit;
+  border: none;
+}
+
+.sidebar.visible {
+  left: 0;
+}
+
+.closeSidebar {
+  position: absolute;
+  right: 0;
+  color: white;
+  font-size: 26px;
+  padding: 10px 20px;
+}
+
+.sidebar ul {
+  color: white;
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  align-items: center;
+  border-top: 0.05px solid rgb(32, 49, 52);
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 15px 10px;
+  width: 80%;
+}
+
+.sidebar li svg {
+  padding: 0 10px;
+}
+
+.sidebar li:first-child {
+  border-top: none;
+}
+
+.sidebar li:last-child {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 837px) {
+  .sidebarContainer {
+    display: block;
+  }
+
+  .sidebar .cart-icon .material-icons {
+    color: white;
+  }
+}

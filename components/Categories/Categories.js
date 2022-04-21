@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import AppContext from '../../context/AppContext';
 import { getCategories, getProductsByCategory,
   getProductsFromCategoryAndQuery } from '../../services/api';
-import './Categories.module.css';
+import styles from './Categories.module.css';
 
 const Categories = () => {
   const {
@@ -42,7 +42,7 @@ const Categories = () => {
   }
 
   return (
-    <aside className={ `categories ${darkMode && 'darkmode'}` }>
+    <aside className={ styles.categories }>
       {
         categories.map(({ name, id }) => (
           pathname.includes('search')
@@ -51,7 +51,7 @@ const Categories = () => {
                 type="button"
                 key={ id }
                 data-testid="category"
-                className={ `category ${category === id && 'selected'}` }
+                className={ `${styles.category} ${category === id && 'selected'}` }
                 id={ id }
                 onClick={ selectCategory }
               >
@@ -63,7 +63,7 @@ const Categories = () => {
                 type="button"
                 key={ id }
                 data-testid="category"
-                className={ `category ${category === id && 'selected'}` }
+                className={ `${styles.category} ${category === id && 'selected'}` }
                 id={ id }
                 onClick={ (e) => {
                   selectCategory(e) 

@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductCard from '../ProductCard';
 import { AiOutlineCaretLeft, AiOutlineCaretRight } from "react-icons/ai";
-import './Slider.module.css';
+import styles from './Slider.module.css';
 
 const Slider = ({ products, id }) => {
 
@@ -16,12 +16,12 @@ const Slider = ({ products, id }) => {
   }
 
   return (
-    <div className="slider" id={ id }>
-      <div className="buttons">
+    <div className={ styles.sliderPrincipalPage } id={ id }>
+      <div className={ styles.buttons }>
         <button
           type="button"
           onClick={ scrollRight }
-          className="scrollRightButton"
+          className={ styles.scrollRightButton }
         >
             <AiOutlineCaretRight />
         </button>
@@ -29,7 +29,7 @@ const Slider = ({ products, id }) => {
         <button
           type="button"
           onClick={ scrollLeft }
-          className="scrollLeftButton"
+          className={ styles.scrollLeftButton }
         >
             <AiOutlineCaretLeft />
         </button>

@@ -8,7 +8,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 // import AppContext from "../../context/AppContext";
 import CartIcon from "../CartIcon";
 import ProfileOptions from "../ProfileOptions/ProfileOptions";
-// import "./index.css";
+import styles from "./Sidebar.module.css";
 
 const menuStyle = { color: "white", fontSize: "26px" };
 
@@ -17,20 +17,20 @@ const Sidebar = () => {
   const [isSidebarVisible, setIsSideBarVisible] = useState(false);
 
   return (
-    <div className="sidebar-container">
+    <div className={ styles.sidebarContainer }>
       <button type="button"
         onClick={ () => setIsSideBarVisible(!isSidebarVisible) }
       >
         <AiOutlineMenu style={menuStyle} />
       </button>
 
-      <div className={ `sidebar ${isSidebarVisible ? 'visible' : ''} ` }>
+      <div className={ `${styles.sidebar} ${isSidebarVisible ? 'visible' : ''} ` }>
         <button
-          className="close-sidebar"
+          className={ styles.closeSidebar }
           type="button"
           onClick={ () => setIsSideBarVisible(false) }
         >
-          <AiOutlineClose className="close-sidebar" />
+          <AiOutlineClose className={ styles.closeSidebar } />
         </button>
         <div className="options">
           <ul>

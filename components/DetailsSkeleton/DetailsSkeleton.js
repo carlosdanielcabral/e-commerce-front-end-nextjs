@@ -1,6 +1,6 @@
 import React from 'react';
 import Skeleton from '@mui/material/Skeleton';
-import './index.css';
+import styles from './DetailsSkeleton.module.css';
 
 const DetailsSkeleton = () => (
   <div className="details-skeleton">

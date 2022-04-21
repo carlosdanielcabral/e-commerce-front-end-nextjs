@@ -1,4 +1,4 @@
-.product-card {
+.productCard {
   align-items: center;
   background-color: white;
   border-radius: 20px;
@@ -13,30 +13,30 @@
   width: 250px;
 }
 
-.product-card.darkmode {
+.productCard.darkmode {
   background-color: rgb(70, 70, 70);
   box-shadow: none;
 }
 
-.product-card .title {
+.productCard .title {
   font-size: 20px;
   font-weight: 200;
   height: 75px;
   overflow: hidden;
 }
 
-.product-card .description {
+.productCard .description {
   box-sizing: border-box;
   margin: 0;
   padding: 0 10px;
   width: 250px;
 }
 
-.product-card.darkmode .description {
+.productCard.darkmode .description {
   color: white;
 }
 
-.product-card .image {
+.productCard .image {
   align-items: center;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -46,15 +46,15 @@
   overflow: hidden;
 }
 
-.product-card .image img {
+.productCard .image img {
   width: 100%;
 }
 
-.product-card .price {
+.productCard .price {
   font-weight: 300;
 }
 
-.product-card button {
+.productCard button {
   border: 1px solid rgb(91, 140, 90);
   background-color: inherit;
   padding: 10px;
@@ -66,13 +66,13 @@
   margin: 15px;
 }
 
-.product-card button:hover {
+.productCard button:hover {
   background-color: rgb(91, 140, 90);
   color: white;
 }
 
 @media screen and (max-width: 900px) {
-  .product-card {
+  .productCard {
     align-items: center;
     background-color: white;
     /* box-shadow: 2px 2px 5px 2px rgb(210, 210, 210); */

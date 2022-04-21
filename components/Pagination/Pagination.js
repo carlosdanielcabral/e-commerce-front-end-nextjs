@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import AppContext from '../../context/AppContext';
 import ProductsContainer from '../ProductsContainer';
-import './index.css';
+import styles from './Pagination.module.css';
 
 const Pagination = () => {
   const { products } = useContext(AppContext);

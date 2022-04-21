@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ProductCard from "../ProductCart";
-import "./index.css";
+import ProductCard from "../ProductCard";
+import styles from "./ProductsContainer.module.css";
 
 const ProductsContainer = ({ products }) => (
-  <div className="products-container">
+  <div className={ styles.productsContainer }>
     {products.map((product) => (
       <ProductCard
         key={product.id}

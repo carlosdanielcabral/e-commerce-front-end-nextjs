@@ -4,7 +4,7 @@ import { AiOutlineLogout } from 'react-icons/ai';
 import { BsFillPersonFill } from 'react-icons/bs';
 import AppContext from '../../context/AppContext';
 import { logout } from '../../services/userFunctions';
-// import './index.css';
+import styles from './ProfileOptions.module.css';
 
 const profileStyle = { color: 'white', fontSize: '40px' };
 const gearStyle = { color: 'rgb(80, 80, 80)', fontSize: '16px', margin: '0 5px' };
@@ -22,17 +22,17 @@ const ProfileOptions = () => {
   }
 
   return (
-    <section className="profile">
+    <section className={ styles.profile }>
       <button type="button">
         <BsFillPersonFill style={profileStyle} />
         {isUserLogged ? (
-          <h3 className="name">{loggedUser.name}</h3>
+          <h3 className={ styles.name }>{loggedUser.name}</h3>
         ) : (
           <h3>Entrar</h3>
         )}
       </button>
 
-      <div className="profile-options">
+      <div className={ styles.profileOptions }>
         {isUserLogged ? (
           <>
             <button type="button" onClick={makeLogout}>

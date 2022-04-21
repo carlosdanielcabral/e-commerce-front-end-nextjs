@@ -1,24 +1,16 @@
-.cart-icon {
+.cartIcon {
+  align-items: center;
   background-color: inherit;
   border: none;
-  height: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.cart-icon .material-icons {
   color: rgb(230, 230, 230);
-  font-size: 28px;
   cursor: pointer;
-}
-
-.cart-icon .material-icons:hover {
-  color: rgb(250, 250, 250);
-  font-size: 28px;
+  display: flex;
+  font-size: 23px;
+  height: 30px;
 }
 
 @media screen and (max-width: 837px) {
-  .cart-icon .material-icons {
+  .cartIcon {
     color: rgb(100, 100, 100);
   }
 }

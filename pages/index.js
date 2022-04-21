@@ -8,21 +8,7 @@ import Slider from '../components/Slider';
 import Categories from '../components/Categories';
 import { getProductById, getAllProducts } from '../services/api';
 import Footer from '../components/Footer';
-import '../styles/Index.module.css';
-
-
-const getAll = async () => {
-  const data = await getAllProducts();
-  const allProductsId = [];
-  for (let productArray of data) {
-    for (let product of productArray) {
-      allProductsId.push(product.id);
-    }
-  }
-  return allProductsId;
-}
-
-getAll();
+import styles from '../styles/Index.module.css';
 
 const Principal = () => {
   const { darkMode, isUserLogged, setLoggedUser, setIsUserLogged } = useContext(AppContext);
@@ -62,44 +48,44 @@ const Principal = () => {
   }, [setCars, setAnimals, setSmartphones,setHasProducts]);
 
   return (
-    <div className={ `principal-page ${darkMode && 'darkmode'}`}>
+    <div className={ styles.principalPage }>
       <Header />
       <Categories />
 
-      <div className="principal-page-categories">
-        <div className="principal-page-category cars">
+      <div className={ styles.principalPageCategories }>
+        <div className={ styles.principalPageCategory}>
           <h2>Automoveis</h2>
           {
             hasProducts
               ? <Slider products={ cars } id="automoveis" />
               : (
-                <div className="products-skeleton">
+                <div className={ styles.productsSkeleton }>
                   {productsSkeleton}
                 </div>
               )
           }
         </div>
 
-        <div className="principal-page-category personal-care">
+        <div className={ styles.principalPageCategory }>
           <h2>Animais</h2>
           {
             hasProducts
               ? <Slider products={ animals } id="animais" />
               : (
-                  <div className="products-skeleton">
+                  <div className={ styles.productsSkeleton }>
                     {productsSkeleton}
                   </div>
               )
           }
         </div>
 
-        <div className="principal-page-category smartphones">
+        <div className={ styles.principalPageCategory }>
           <h2>Celulares e telefones</h2>
           {
             hasProducts
               ? <Slider products={ smartphones } id="celulares" />
               : (
-                  <div className="products-skeleton">
+                  <div className={ styles.productsSkeleton }>
                     {productsSkeleton}
                   </div>
               )

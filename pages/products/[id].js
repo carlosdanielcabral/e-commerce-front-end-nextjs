@@ -6,58 +6,75 @@ import { getProductById, getAllProducts } from '../../services/api';
 import Header from '../../components/Header';
 import Gallery from '../../components/Gallery';
 import DetailsSkeleton from '../../components/DetailsSkeleton';
-import '../../styles/ProductDetail.module.css';
+import styles from '../../styles/ProductDetail.module.css';
 
-const getAll = async () => {
-   const data = await getAllProducts();
-   console.log(data);
+const getAllProductsId = async () => {
+  const data = await getAllProducts();
+  const allProductsId = [];
+  for (let productArray of data) {
+    for (let product of productArray) {
+      allProductsId.push(product.id);
+    }
+  }
+  return allProductsId;
+}
+
+const dataFormat = async () => {
+  const products = await getAllProductsId();
+  const paths = products.map((product) => ({
+    params: {
+      id: String(product)
+    }
+  }))
+  return paths;
 }
 
 export const getStaticPaths = async () => ({
-  paths: [{
-    params: {
-      id: 1
-    },
-    params: {
-      id: 2
-    }
-  }],
+  paths: await dataFormat(),
   fallback: false,
 })
 
+export const getStaticProps = async (context) => ({
+  props: {
+    id: context.params.id,
+  }
+})
+
 const ProductDetail = ({ id }) => {
-  const { darkMode } = useContext(AppContext);
+  const { total, setTotal } = useContext(AppContext);
   const [hasProduct, setHasProduct] = useState(false);
   const [product, setProduct] = useState({});
 
   useEffect(() => {
     const getProduct = async () => {
-      const product = await getProductById(productId);
+      const product = await getProductById(id);
       setProduct(product);
       setHasProduct(true);
       document.title = product.title;
     }
 
     getProduct();
-  }, [setProduct, productId]);
+  }, [setProduct, id]);
 
 
   const addToCart = ({ target }) => {
     const { id } = target;
 
     const products = [localStorage.getItem('shoppingCart')];
+
     if (products[0]) {
       const product = [...products, id];
       localStorage.setItem('shoppingCart', product);
     } else {
       localStorage.setItem('shoppingCart', id);
     }
+    setTotal(total + product.price);
   }
   
   return (
     <>
       <Header />
-      <div className={ `product-detail-page container ${darkMode && 'darkmode'}` }>
+      <div className={ `${styles.productDetailPage} container` }>
         {
           !hasProduct
             ? <DetailsSkeleton />
@@ -68,13 +85,13 @@ const ProductDetail = ({ id }) => {
                 </h2>
 
                 <div className="container-flex">
-                  <div className="product-image">
+                  <div className={ styles.productImage }>
                     { product.pictures && <Gallery pictures={ product.pictures } /> }
                   </div>
 
-                  <div className="product-data">
+                  <div className={ styles.productData }>
                     <h3>Informações</h3>
-                    <p className="price">
+                    <p className={ styles.price }>
                       { product.price && (
                         product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })) }
                     </p>
