@@ -71,8 +71,9 @@
   /* border-left: 8px solid rgb(219, 190, 129); */
 }
 
-.categories .selected {
-  background-color: rgb(200, 200, 200);
+.selected {
+  background-color: #318d90;
+  color: white
   /* border-left: 8px solid rgb(219, 190, 129); */
 }
 

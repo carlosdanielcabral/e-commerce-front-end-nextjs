@@ -51,7 +51,7 @@ const Categories = () => {
                 type="button"
                 key={ id }
                 data-testid="category"
-                className={ `${styles.category} ${category === id && 'selected'}` }
+                className={ `${styles.category} ${category === id && styles.selected }` }
                 id={ id }
                 onClick={ selectCategory }
               >
@@ -63,7 +63,7 @@ const Categories = () => {
                 type="button"
                 key={ id }
                 data-testid="category"
-                className={ `${styles.category} ${category === id && 'selected'}` }
+                className={ `${styles.category} ${category === id && styles.selected}` }
                 id={ id }
                 onClick={ (e) => {
                   selectCategory(e) 

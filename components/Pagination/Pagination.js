@@ -20,11 +20,8 @@ const Pagination = () => {
   let currentProducts = products.slice(startIndex,  startIndex + 12);
 
   const selectPage = ({ target: { id } }) => {
-    setCurrentPage(Number(id.substring(5)));
-    const selected = document.querySelector('.page-selected');
-    if (selected) selected.classList.remove('page-selected')
-    const element = document.getElementById(id);
-    element.classList.add('page-selected');
+    setCurrentPage(Number(id));
+    console.log(currentPage, id)
   }
 
   return (
@@ -35,8 +32,8 @@ const Pagination = () => {
           buttons.map((button) => (
             <button
               type="button"
-              className={ button === 1 && currentPage === 1 ? 'page-selected' : '' }
-              id={ `page-${button}` }
+              className={ currentPage == button ? styles.selected : '' }
+              id={ button }
               key={ `page${button}` }
               onClick={ selectPage }
             >

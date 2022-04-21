@@ -7,3 +7,6 @@
   width: 30px;
 }
 
+button.selected {
+  border: 1px solid #318d90;
+}
