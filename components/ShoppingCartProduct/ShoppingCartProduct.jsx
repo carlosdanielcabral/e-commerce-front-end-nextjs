@@ -22,11 +22,14 @@ const ShoppingCartProduct = (props) => {
 
   const handleQuantity = (type) => {
     if (type === 'increase') {
+      setIsLessButtonDisable(false);
       setQuantity(quantity + 1);
       setTotal(total + price);
       addProduct(id);
     } else {
       setQuantity(quantity - 1);
+      if (quantity === 1) setIsLessButtonDisable(true);
+      else setIsLessButtonDisable(false);
       setTotal(total - price);
       removeProductFromStorage(id);
     }
@@ -68,7 +71,7 @@ const ShoppingCartProduct = (props) => {
           onClick={ () => removeProduct(id) }
           type="button"
           id={ id }
-          className="remove-product-button"
+          className={ styles.removeProductButton }
         >
           <BsFillTrashFill />
         </button>

@@ -1,60 +1,60 @@
-.purchase-summary {
+.purchaseSummary {
   display: flex;
   width: 90%;
   overflow-x: auto;
 }
 
-.purchase-summary .product-card {
+.purchaseSummary .product-card {
   min-width: 250px;
   height: 230px;
   text-align: center;
 }
 
-.checkout-page .total {
+.checkoutPage .total {
   font-weight: 300;
 }
 
-.checkout-form {
+.checkoutForm {
   margin: 50px 0;
 }
 
-.checkout-form, .checkout-form label {
+.checkoutForm, .checkoutForm label {
   display: flex;
   flex-direction: column;
   font-weight: 300;
 }
 
-.checkout-form input {
+.checkoutForm input {
   width: 400px;
   padding: 10px;
   margin: 10px 0 25px 0;
   border: 1px solid rgb(200, 200, 200);
 }
 
-.checkout-form fieldset {
+.checkoutForm fieldset {
   padding: 40px 0;
   border: none;
 }
 
-.checkout-form legend {
+.checkoutForm legend {
   font-size: 20px;
   color: rgb(50, 50, 50);
   font-weight: 300;
 }
 
-.checkout-page .product-card .product-title {
+.checkoutPage .product-card .product-title {
   display: inline-block;
   height: 30px!important;
 }
 
 @media screen and (max-width: 900px) {
-  .purchase-summary {
+  .purchaseSummary {
     display: flex;
     width: 100%;
     overflow-x: auto;
   }
 
-  .checkout-form input {
+  .checkoutForm input {
     width: 90%;
     padding: 10px;
     margin: 10px 0 25px 0;

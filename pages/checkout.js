@@ -5,7 +5,7 @@ import getTotal from '../helpers/getTotal';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import ProductCard from '../components/ProductCard';
-import '../styles/Checkout.module.css';
+import styles from '../styles/Checkout.module.css';
 
 const CheckoutPage = () => {
   const [total, setTotal] = useState(0);
@@ -23,15 +23,15 @@ const CheckoutPage = () => {
 
   if (products.length === 0) return '';
     return (
-      <div className="checkout-page">
+      <div className={ styles.checkoutPage }>
         <Header />
         <div className="container">
           <h2>Resumo da compra:</h2>
-          <h3 className="total">
+          <h3 className={ styles.total }>
             Total:
             { total.toLocaleString('pr-br', { style: 'currency', currency: 'BRL' }) }
           </h3>
-          <div className="purchase-summary">
+          <div className={ styles.purchaseSummary }>
             {
               products.map((product) => (
                 <ProductCard
@@ -44,7 +44,7 @@ const CheckoutPage = () => {
             }
           </div>
 
-          <form className="checkout-form">
+          <form className={styles.checkoutForm }>
             <fieldset>
               <legend>Insira suas informações</legend>
               <label htmlFor="full-name">

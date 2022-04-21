@@ -51,26 +51,37 @@
 }
 
 .actions button {
+  align-items: center;
+  background-color: inherit;
+  border: 1px solid rgb(210, 210, 210);
   height: 30px;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
+  justify-content: center;
   margin: 5px;
+  width: 30px;
+  text-align: center;
 }
 
-.actions input {
+.actions span {
+  align-items: center;
+  display: flex;
   width: 40px;
   height: 30px;
+  justify-content: center;
   box-sizing: border-box;
+  text-align: center;
 }
 
-.actions .remove-product-button {
+.removeProductButton {
   border: rgb(129, 3, 3);
-  background-color: rgb(129, 3, 3);
-  color: white;
+  background-color: inherit;
+  color: rgb(129, 3, 3);
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.actions.remove-product-button:hover {
+.removeProductButton-button:hover {
   background-color: inherit;
   color: rgb(129, 3, 3);
 }
