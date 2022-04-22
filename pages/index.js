@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Head from 'next/head';
 import AppContext from '../context/AppContext';
 import { getProductsByCategory } from '../services/api';
 import { getLoggedUser } from '../services/userFunctions';
@@ -45,6 +46,12 @@ const Principal = () => {
 
   return (
     <div className={ styles.principalPage }>
+      <Head>
+        <title>Home</title>
+        <meta name="description" content="Front End básico para um e-commerce" />
+        <meta name="keywords" content="HTML, CSS, JavaScript, React, NextJS, Material-UI, Git, GitHub, Front End, desenvolvedor" />
+        <meta name="author" content="Carlos Daniel Cabral" />
+      </Head>
       <Header />
       <Categories />
 

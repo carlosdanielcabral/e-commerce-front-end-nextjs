@@ -11,7 +11,7 @@ const ProductCard = ({ id, title, image, price }) => {
   return (
     <div className={ styles.productCard }>
       <Link href={ `/products/${encodeURIComponent(id)}` } passHref>
-        <a>
+        <a aria-label="ver mais sobre este produto">
           <div className={ styles.image }>
             <Image src={ image } alt={ title } layout="fill"/>
           </div>

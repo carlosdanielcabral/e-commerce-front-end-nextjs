@@ -12,8 +12,10 @@ const Sidebar = () => {
 
   return (
     <div className={ styles.sidebarContainer }>
-      <button type="button"
+      <button
+        type="button"
         onClick={ () => setIsSideBarVisible(!isSidebarVisible) }
+        aria-label="menu"
       >
         <AiOutlineMenu style={menuStyle} />
       </button>
@@ -23,6 +25,7 @@ const Sidebar = () => {
           className={ styles.closeSidebar }
           type="button"
           onClick={ () => setIsSideBarVisible(false) }
+          aria-label="fechar sidebar"
         >
           <AiOutlineClose />
         </button>

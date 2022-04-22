@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
 import Categories from '../components/Categories';
 import Header from '../components/Header/Header';
@@ -8,7 +8,9 @@ import styles from '../styles/Search.module.css';
 const Home = () => {
   const { hasSearch, darkMode } = useContext(AppContext);
 
-  // document.title = 'E-commerce | Home';
+  useEffect(() => {
+    document.title = 'Pesquisar produto';
+  }, []);
 
   return (
     <div className={ styles.searchPage }>

@@ -43,7 +43,7 @@ const Header = () => {
 
         <section className={ styles.links }>
           <Link href="/" passHref>
-            <a>
+            <a aria-label="home">
               <AiFillHome className={ styles.homeIcon } />
             </a>
           </Link>

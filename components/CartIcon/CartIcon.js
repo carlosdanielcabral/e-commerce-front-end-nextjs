@@ -11,6 +11,7 @@ const CartIcon = () => {
       className={styles.cartIcon}
       type="button"
       onClick={ () => router.push('/shopping-cart') }
+      aria-label="ir para meu carrinho"
     >
       <BsFillCartFill />
     </button>

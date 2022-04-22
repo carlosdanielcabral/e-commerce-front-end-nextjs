@@ -46,6 +46,7 @@ const Search = () => {
           <button
             type="submit"
             onClick={ searchProducts }
+            aria-label="pesquisar"
           >
             <BsSearch style={ style } className={ styles.searchIcon } />
           </button>
