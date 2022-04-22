@@ -7,6 +7,11 @@
   min-height: 100vh;
 }
 
+.productDetailPage h2 {
+  font-size: 30px;
+  font-weight: 300;
+}
+
 .productDetailPage h3 {
   font-size: 34px;
   font-weight: 300;
@@ -19,16 +24,24 @@
 
 .containerFlex {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
+.containerFlex h4 {
+  font-weight: 300;
+}
+
 .productData {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 20px;
+  margin: 0;
+  padding: 20px;
   width: 300px;
 }
 
 .productData .price {
   font-size: 26px;
+  padding: 0 10px;
 }
 
 .rate .material-icons {
@@ -52,20 +65,23 @@
 }
 
 .productData button {
+  align-items: center;
+  background-color: rgb(91, 140, 90);
   border: 1px solid rgb(91, 140, 90);
-  background-color: inherit;
+  display: flex;
   padding: 10px;
-  color: rgb(51, 100, 50);
+  color: white;
   transition: 300ms;
-  width: 80%;
+  justify-content: center;
+  width: 100%;
   border-radius: 3px;
   cursor: pointer;
-  margin: 15px;
+  margin: 15px 0;
 }
 
 .productData button:hover {
-  background-color: rgb(91, 140, 90);
-  color: white;
+  background-color: inherit;
+  color: rgb(91, 140, 90);
 }
 
 @media screen and (max-width: 800px) {

@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-max-depth */
 import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { BsFillCartFill } from "react-icons/bs";
 import AppContext from '../../context/AppContext';
 import { getProductById, getAllProducts } from '../../services/api';
 import Header from '../../components/Header';
@@ -81,7 +82,7 @@ const ProductDetail = ({ id }) => {
                   { product.title }
                 </h2>
 
-                <div className="containerFlex">
+                <div className={ styles.containerFlex }>
                   <div className={ styles.productImage }>
                     { product.pictures && <Gallery pictures={ product.pictures } /> }
                   </div>
@@ -90,17 +91,18 @@ const ProductDetail = ({ id }) => {
                     <h3>Informações</h3>
                     <h4>Frete grátis: { product.shipping.freeShipping ? 'sim' : 'não' }</h4>
                     <h4>Garantia: { product.warranty }</h4>
-                    <h4>Preço:</h4>
-                    <p className={ styles.price }>
-                      { product.price && (
-                        product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })) }
-                    </p>
+                    <h4>Preço:
+                      <span className={ styles.price }>
+                        { product.price && (
+                          product.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })) }
+                      </span>
+                    </h4>
                     <button
                       type="button"
                       id={ product.id }
                       onClick={ addToCart }
                     >
-                      Adicionar ao carrinho
+                     <BsFillCartFill style={ {marginRight: '10px'} } /> Adicionar ao carrinho
                     </button>
                   </div>
                 </div>

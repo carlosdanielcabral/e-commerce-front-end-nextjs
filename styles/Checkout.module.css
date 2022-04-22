@@ -2,6 +2,7 @@
   display: flex;
   width: 90%;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .purchaseSummary .product-card {
@@ -16,6 +17,14 @@
 
 .checkoutForm {
   margin: 50px 0;
+  max-width: 1000px;
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 25px 0;
 }
 
 .checkoutForm, .checkoutForm label {
@@ -27,7 +36,7 @@
 .checkoutForm input {
   width: 400px;
   padding: 10px;
-  margin: 10px 0 25px 0;
+  margin: 10px 0 0px 0;
   border: 1px solid rgb(200, 200, 200);
 }
 
@@ -45,6 +54,14 @@
 .checkoutPage .product-card .product-title {
   display: inline-block;
   height: 30px!important;
+}
+
+.error {
+  font-weight: 300;
+  font-size: 12px;
+  color: rgb(158, 3, 3);
+  display: block;
+  padding: 10px 0;
 }
 
 @media screen and (max-width: 900px) {
