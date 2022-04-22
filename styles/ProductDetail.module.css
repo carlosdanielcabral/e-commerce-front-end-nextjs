@@ -84,9 +84,14 @@
   color: rgb(91, 140, 90);
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 970px) {
   .containerFlex {
     flex-wrap: wrap;
+  }
+
+  .productData {
+    margin: 10px auto;
+    width: 95%;
   }
 
   .productDetailPage .productImage {
