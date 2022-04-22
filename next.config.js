@@ -3,7 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['http2.mlstatic.com']
-  }
+  },
+  i18n: {
+    locales: ["pt"],
+    defaultLocale: "pt",
+  },
 }
 
 module.exports = nextConfig
