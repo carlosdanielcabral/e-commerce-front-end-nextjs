@@ -11,9 +11,7 @@ import Footer from '../components/Footer';
 import styles from '../styles/Index.module.css';
 
 const Principal = () => {
-  const { darkMode, isUserLogged, setLoggedUser, setIsUserLogged } = useContext(AppContext);
   const [cars, setCars] = useState([]);
-  const [animals, setAnimals] = useState([]);
   const [smartphones, setSmartphones] = useState([]);
   const [hasProducts, setHasProducts] = useState(false);
   const productsSkeleton = [];
@@ -36,16 +34,14 @@ const Principal = () => {
   
   useEffect(() => {
     const getProducts = async () => {
-      const cars = await getProductsByCategory('MLB5672');
-      const animals = await getProductsByCategory('MLB1071');
-      const smartphonesData = await getProductsByCategory('MLB1051');
+      const cars = await getProductsByCategory('MLB5672&limit=8');
+      const smartphonesData = await getProductsByCategory('MLB1051&limit=8');
       setCars(cars.results);
-      setAnimals(animals.results);
       setSmartphones(smartphonesData.results);
       setHasProducts(true);
     }
     getProducts();
-  }, [setCars, setAnimals, setSmartphones,setHasProducts]);
+  }, [setCars, setSmartphones,setHasProducts]);
 
   return (
     <div className={ styles.principalPage }>
@@ -62,19 +58,6 @@ const Principal = () => {
                 <div className={ styles.productsSkeleton }>
                   {productsSkeleton}
                 </div>
-              )
-          }
-        </div>
-
-        <div className={ styles.principalPageCategory }>
-          <h2>Animais</h2>
-          {
-            hasProducts
-              ? <Slider products={ animals } id="animais" />
-              : (
-                  <div className={ styles.productsSkeleton }>
-                    {productsSkeleton}
-                  </div>
               )
           }
         </div>
