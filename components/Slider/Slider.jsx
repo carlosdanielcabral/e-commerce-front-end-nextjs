@@ -23,6 +23,7 @@ const Slider = ({ products, id }) => {
             type="button"
             onClick={ scrollRight }
             className={ styles.scrollRightButton }
+            aria-label="mover scrollbar para a direita"
           >
               <AiOutlineCaretRight />
           </button>
@@ -31,6 +32,7 @@ const Slider = ({ products, id }) => {
             type="button"
             onClick={ scrollLeft }
             className={ styles.scrollLeftButton }
+            aria-label="mover scrollbar para a esquerda"
           >
               <AiOutlineCaretLeft />
           </button>
