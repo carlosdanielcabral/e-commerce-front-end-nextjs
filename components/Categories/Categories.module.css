@@ -85,9 +85,11 @@
 
   @media screen and (max-width: 900px) {
     .categories {
-      border: none;
+      background-color: rgb(245, 245, 245);
       box-sizing: border-box;
-      margin: 0;
-      width: 100vw;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 20px;
+      width: 100%;
     }
   }

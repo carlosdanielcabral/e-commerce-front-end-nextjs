@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header className={ styles.header }>
       <section className={ styles.headerContainer }>
-        <Sidebar />
+        {/* <Sidebar /> */}
         <section className={ styles.logo }>
           <h1 className={ styles.headerTitle }>E-commerce</h1>
         </section>
@@ -33,7 +33,7 @@ const Header = () => {
               }
             </button>
           </section> */}
-          <ProfileOptions />
+          {/* <ProfileOptions /> */}
         </section>
       </section>
 
