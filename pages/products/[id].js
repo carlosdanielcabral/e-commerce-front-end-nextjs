@@ -32,7 +32,7 @@ const dataFormat = async () => {
 
 export const getStaticPaths = async () => ({
   paths: await dataFormat(),
-  fallback: false,
+  fallback: true,
 })
 
 export const getStaticProps = async (context) => ({
